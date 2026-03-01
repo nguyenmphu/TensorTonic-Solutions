@@ -6,7 +6,6 @@ def roc_metric(y_true, y_score, threshold):
     tn = np.sum((1 - y_true) * (y_score < threshold))
     fn = np.sum(y_true) - tp
     fp = n - tp - tn - fn
-    print(threshold, tp, tn, fn, tp)
     tpr = tp / (tp + fn)
     fpr = fp / (fp + tn)
     return (tpr, fpr)
